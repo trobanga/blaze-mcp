@@ -64,6 +64,46 @@ Then use:
 }
 ```
 
+## Client Configuration
+
+### Claude Code / Claude Desktop
+
+Add to `~/.claude/settings.json` (Claude Code) or Claude Desktop config:
+
+```json
+{
+  "mcpServers": {
+    "blaze": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/trobanga/blaze-mcp", "blaze-mcp"]
+    }
+  }
+}
+```
+
+### Gemini CLI
+
+Add to `~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "blaze": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/trobanga/blaze-mcp", "blaze-mcp"]
+    }
+  }
+}
+```
+
+Or use the Gemini CLI command:
+
+```bash
+gemini mcp add blaze -- uvx --from git+https://github.com/trobanga/blaze-mcp blaze-mcp
+```
+
+See [Gemini CLI MCP documentation](https://google-gemini.github.io/gemini-cli/docs/tools/mcp-server.html) for more options.
+
 ## Features
 
 ### Tools
