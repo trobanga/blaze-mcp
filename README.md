@@ -14,9 +14,24 @@ This server exposes Blaze's FHIR capabilities to AI agents, allowing them to:
 
 ## Quick Start
 
-### Run without installation (using uv)
+### Run directly from GitHub (no installation)
 
 Add to `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "blaze": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/trobanga/blaze-mcp", "blaze-mcp"]
+    }
+  }
+}
+```
+
+Then ask Claude: *"Connect to Blaze at http://localhost:8080/fhir and search for patients"*
+
+### Alternative: From local directory
 
 ```json
 {
@@ -29,15 +44,15 @@ Add to `~/.claude/settings.json`:
 }
 ```
 
-Then ask Claude: *"Connect to Blaze at http://localhost:8080/fhir and search for patients"*
-
-### Alternative: Install first
+### Alternative: Install with pip
 
 ```bash
-pip install -e .
+pip install git+https://github.com/trobanga/blaze-mcp
+# or from local clone
+pip install -e /path/to/blaze-mcp
 ```
 
-Then use the simpler config:
+Then use:
 
 ```json
 {
