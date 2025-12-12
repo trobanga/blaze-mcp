@@ -99,8 +99,10 @@ Add to `~/.gemini/settings.json`:
 Or use the Gemini CLI command:
 
 ```bash
-gemini mcp add blaze -- uvx --from git+https://github.com/trobanga/blaze-mcp blaze-mcp
+gemini mcp add blaze uvx --from git+https://github.com/trobanga/blaze-mcp blaze-mcp
 ```
+
+**Note:** Requires [uv](https://docs.astral.sh/uv/getting-started/installation/) to be installed.
 
 See [Gemini CLI MCP documentation](https://google-gemini.github.io/gemini-cli/docs/tools/mcp-server.html) for more options.
 
